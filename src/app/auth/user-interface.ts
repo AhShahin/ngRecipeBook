@@ -1,3 +1,5 @@
-/**
- * Created by ahmed on 2017-05-20.
- */
+export interface User {
+  email: string,
+  password: string,
+  confirmPassword?: string
+}

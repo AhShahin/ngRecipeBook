@@ -1,0 +1,33 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" [routerLink]="['/']">Recipe Book</a>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/recipes']">Recipes <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/shopping-list']">Shopping List</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown" appDropdown>
+        <a class="nav-link dropdown-toggle"
+           role="button" id="navbarDropdownMenuLink"
+           aria-haspopup="true" aria-expanded="false">
+          Recipe Management
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" [ngStyle]="{
+    'margin-top': 0}" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" (click)="onStore()" style="cursor: pointer">Store Recipes</a>
+          <a class="dropdown-item" (click)="onFetch()" style="cursor: pointer">Retrieve Recipes</a>
+          <a class="dropdown-item" [routerLink]="['/signup']" (click)="onFetch()" style="cursor: pointer">Sign Up</a>
+          <a class="dropdown-item" [routerLink]="['/signin']" (click)="onFetch()" style="cursor: pointer">Sign In</a>
+          <a class="dropdown-item" (click)="onFetch()" style="cursor: pointer">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
